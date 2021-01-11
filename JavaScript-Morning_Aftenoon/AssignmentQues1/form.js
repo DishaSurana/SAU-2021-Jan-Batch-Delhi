@@ -61,11 +61,23 @@ validateAndPrint = () => {
     {
         status = "Successfully Submitted!"
         msg += "<h5>Entered Student Details: </h5>";
-        msg += "<u>Name:</u> " + firstName + " " + lastName;
-        msg += "<br><u>Address:</u> " + address + ", " + state + "<br><u>Zip Code:</u> " + pincode;
-        msg += "<br><u>Mobile:</u> " + phone + " <br><u>Gender:</u> " + gender;
-        msg += "<br><u>Email Id:</u> " + email + " <br><u>Course:</u> " + course;
-        
+
+        let userInfo = {
+            'Name': firstName + ' ' + lastName,
+            'Address': address,
+            'Zipcode': pincode,
+            'Phone': phone,
+            'EmailId':email,
+            'Course':course
+        };
+
+        for(let k in userInfo){
+            // console.log(k,userInfo[k]);
+            msg += '<u>' + k + '</u>: ' + userInfo[k] + '<br>'
+        }
+
+        console.log(userInfo);
+  
         displayMsgDiv.classList.remove('alert-danger');
         displayMsgDiv.classList.add('alert-success');
         displayDetails.classList.add('alert-info');
@@ -82,12 +94,4 @@ validateAndPrint = () => {
     displayMsgDiv.innerHTML = status;
     displayDetails.innerHTML = msg;
     
-    // console.log(firstName + isNameValid);
-    // console.log(gender + isGenderValid);
-    // console.log(phone + isPhoneValid);
-    // console.log(pincode + isPincodeValid);
-    // console.log(course + isCourseValid);
-    // console.log(address + isAddressValid);
-    // console.log(email + isEmailValid);
-
 }
