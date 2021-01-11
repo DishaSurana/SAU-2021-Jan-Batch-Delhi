@@ -1,0 +1,21 @@
+
+body{
+    background-color:rgb(253, 238, 250);
+}
+
+.removeColor{
+    background-color: white;
+}
+
+.evenColor{
+
+   background-color:skyblue; 
+
+}
+
+.multiple5Color{
+/*
+   background-color:rgb(140, 207, 207);
+*/
+    background-color:yellow;
+}
