@@ -1,0 +1,25 @@
+<h1>Employee Details Form</h1>
+
+<form [formGroup]="EmpFormGroup" (ngSubmit)="submitEmployee()">
+
+  <div class="formInput">
+    <label for="name">Full Name: </label>
+    <input type="text" formControlName="name">
+
+  </div>
+  <div class="formInput">
+    <label for="empid">Employee Id: </label>
+    <input type="text" formControlName="empid">
+  </div>
+  <div class="formInput">
+    <label for="age"> Address: </label>
+    <textarea formControlName="address" cols="30" rows="2"></textarea>
+  </div>
+  <div class="formInput">
+    <label for="dob">Birth Date: </label>
+    <input type="date" formControlName="dob">
+  </div>
+  <div>
+    <button type="submit" [disabled]="EmpFormGroup.invalid">Submit</button>
+  </div>
+</form>

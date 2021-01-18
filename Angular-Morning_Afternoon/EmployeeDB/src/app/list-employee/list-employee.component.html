@@ -1,0 +1,23 @@
+<!-- <p>list-employee works!</p> -->
+
+
+<div style="margin: 30px auto;">
+
+  <h1 style="margin: 30px auto; text-align: center;">Employees' List</h1>
+  <table border="1px" style="margin: 20px auto;">
+    <tr>
+      <th>Employee Id</th>
+      <th>Employee Name</th>
+      <th>Employee Address</th>
+      <th>Employee DOB</th>
+    </tr>
+    <tr *ngFor="let emp Of employees; let indexOfEmp=index">
+      <td>{{emp.empid}}</td>
+      <td>{{emp.name}}</td>
+      <td>{{emp.address}}</td>
+      <td>{{emp.dob}}</td>
+      <button (click)="deleteEmployee(indexOfEmp)">Delete</button>
+      <button [routerLink]="['../employeeForm',indexOfEmp]">Update</button>
+    </tr>
+  </table>
+</div>

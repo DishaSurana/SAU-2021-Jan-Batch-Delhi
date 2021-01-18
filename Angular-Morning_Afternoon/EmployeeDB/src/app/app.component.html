@@ -1,0 +1,16 @@
+<title>{{title}}</title>
+
+<h1 style="text-align: center; margin: 30px auto; ">EMPLOYEE DATABASE</h1>
+
+<div style="margin: 10px auto; text-align: center;">
+
+  <button [routerLink]="['employeeForm','']">Add Employee</button>
+  <button [routerLink]="['listEmployees']">Show Employees</button>
+
+</div>
+
+<router-outlet></router-outlet>
+
+<footer style="text-align: center;">
+  <p>Copyright &copy; 2021 Disha Surana</p>
+</footer>
