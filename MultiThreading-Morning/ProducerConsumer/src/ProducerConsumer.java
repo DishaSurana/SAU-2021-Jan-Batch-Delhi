@@ -11,7 +11,7 @@ public class ProducerConsumer {
         
         public void produce() throws InterruptedException
         {
-            int value = 0;
+            int value = 1;
             while(true)
             {
                 synchronized (this)
@@ -33,7 +33,7 @@ public class ProducerConsumer {
             }
         }
         
-        public void consumes() throws InterruptedException
+        public void consume() throws InterruptedException
         {
             while(true)
             {
@@ -81,7 +81,7 @@ public class ProducerConsumer {
             @Override
             public void run() {
                 try {
-                    pc.consumes();
+                    pc.consume();
                 } catch (InterruptedException e) {
                     System.out.println("Error: " + e);
                 }
@@ -89,7 +89,6 @@ public class ProducerConsumer {
         });
 
         try {
-
             // starting threads
             producerThread.start();
             consumerThread.start();
@@ -97,6 +96,7 @@ public class ProducerConsumer {
             // producerThread finishes before consumerThread
             producerThread.join();
             consumerThread.join();
+
         }
         catch (Exception e){
             e.printStackTrace();
@@ -104,7 +104,6 @@ public class ProducerConsumer {
         finally {
             System.out.println("Ending Producer Consumer (Bucket size:3) Transaction");
         }
-
 
     }
 }
