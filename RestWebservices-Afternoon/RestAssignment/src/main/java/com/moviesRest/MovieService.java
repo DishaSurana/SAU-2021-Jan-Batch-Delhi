@@ -13,12 +13,14 @@ import java.util.List;
 public class MovieService {
 
     @XmlElement(name="movie")
-    private List<Movie> movieList;
+    private static List<Movie> movieList = new ArrayList<>();
+
+    static {
+        //default record
+        movieList.add(new Movie(1001, "DDLJ", 1990, "Yash Raj"));
+    }
 
     public MovieService() {
-        movieList = new ArrayList<>();
-        //default record
-        movieList.add(new Movie(1001,"DDLJ",1990,"Yash Raj"));
     }
 
 
